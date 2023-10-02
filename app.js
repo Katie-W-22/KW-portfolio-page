@@ -149,6 +149,7 @@ function notopaque(){
 katieSoc.addEventListener("mouseover", opaque)
 katieSoc.addEventListener("mouseout", notopaque)
 
+//CLOCK
 const secHand = document.querySelector("#secHand");
 const minHand = document.querySelector("#minHand");
 const hourHand = document.querySelector("#hourHand");
