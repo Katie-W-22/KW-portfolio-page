@@ -45,18 +45,15 @@ function displayWeather(newWeather) {
     newWeather.daily["weathercode"][0] == 82
   ) {
     para5Element.textContent = "Today's forecast: Rain Showers!";
-    weatherPhoto = getElementById("weatherStripe");
-    weatherPhoto.setAttribute("background", url("bubbles.jpeg"));
   } else if (newWeather.daily["weathercode"][0] == 0) {
     para5Element.textContent = "Today's forecast: Clear skies!";
   } else if (
     newWeather.daily["weathercode"][0] == 1 ||
     newWeather.daily["weathercode"][0] == 2
   ) {
-    para5Element.textContent =
-      "Today's forecast: Mainly clear, partly cloudy, and overcast";
-  } else if (newWeather.daily["weathercode"][0] == 63 || newWeather.daily["weathercode"][0] == 61 || newWeather.daily["weathercode"][0] == 65){
-    para5Element.textContent = "Rain: Slight, moderate and heavy intensity"
+    para5Element.textContent = "Today's forecast: Mainly clear, partly cloudy, and overcast";
+    } else if (newWeather.daily["weathercode"][0] == 63 || newWeather.daily["weathercode"][0] == 61 || newWeather.daily["weathercode"][0] == 65){
+    para5Element.textContent = "Rain: Slight, moderate and heavy intensity";
   }
 }
 
@@ -139,3 +136,59 @@ function changeColor(){
 
 }
 ansButton.addEventListener("click", changeColor);
+
+
+//add event listener to fade avatar on hover
+const katieSoc = document.getElementById("avatar");
+function opaque(){
+  katieSoc.setAttribute("style", "opacity: 50%");
+}
+function notopaque(){
+  katieSoc.setAttribute("style", "opacity: 100%");
+}
+katieSoc.addEventListener("mouseover", opaque)
+katieSoc.addEventListener("mouseout", notopaque)
+
+const secHand = document.querySelector("#secHand");
+const minHand = document.querySelector("#minHand");
+const hourHand = document.querySelector("#hourHand");
+//hand.style.transform = `rotate(90deg)`; //🔍 HINT: THis is an example of how to rotate the hand!
+
+//
+let currentDate = new Date();
+let currentSeconds = currentDate.getSeconds();
+let currentMinutes = currentDate.getMinutes();
+let currentHour = currentDate.getHours();
+
+// functon to move the hand using transform
+let currentSecAngle = currentSeconds * 6;
+let currentMinAngle = currentMinutes * 6;
+let currentHourAngle = currentHour * 30.2;
+  //currentHour * 7.5 * (Math.floor(currentMinAngle / 90)+1);
+secHand.style.transform = `rotate(${currentSecAngle}deg)`;
+minHand.style.transform = `rotate(${currentMinAngle}deg)`;
+hourHand.style.transform = `rotate(${currentHourAngle}deg)`;
+
+function moveSecHand() {
+  currentSecAngle += 6;
+  secHand.style.transform = `rotate(${currentSecAngle}deg)`;
+  if (currentSecAngle % 360 == 0) {
+    moveMinHand();
+  }
+}
+
+function moveMinHand() {
+  currentMinAngle += 6;
+  minHand.style.transform = `rotate(${currentMinAngle}deg)`;
+  if (currentMinAngle % 90 == 0) {
+    moveHourHand();
+  }
+}
+
+function moveHourHand() {
+  currentHourAngle += 7.5;
+  hourHand.style.transform = `rotate(${currentHourAngle}deg)`;
+}
+// set interval to call the function every second
+
+let secTimerID = setInterval(moveSecHand, 1000);

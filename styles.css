@@ -24,10 +24,10 @@ h1 {
   margin-right: auto;
   }
  
-#Avatar{
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+#avatar{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
   margin-left: auto;
   margin-right: auto;
   display:block;
@@ -181,3 +181,47 @@ h1 {
   .weatherLogo{
     border-radius: 50px;
   }
+
+  #clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  #minHand {
+    position: absolute;
+    height: 100px;
+    width: 5px;
+    border-top: 120px solid black;
+  }
+  #secHand {
+    position: absolute;
+    height: 100px;
+    width: 5px;
+    border-top: 120px solid red;
+  }
+  
+  #hourHand {
+    position: absolute;
+    height: 50px;
+    width: 5px;
+    border-top: 120px solid green;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  #message-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    width: 100%;
+  }
+  
+  .animate {
+    animation: scale 3s infinite;
+  }
+ 
