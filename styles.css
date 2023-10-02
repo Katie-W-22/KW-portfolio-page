@@ -139,3 +139,24 @@ h1 {
     color: white;
     text-align: left;
   }
+
+
+  #name{
+    height: 50px;
+    width:50px;
+    font-weight: bold;
+    margin: 5px;
+    }
+
+    .button {
+      transition-duration: 0.4s;
+    }
+
+    .button:hover {
+      background-color: rgb(68, 65, 65) ;
+      color: white;
+    }
+
+    .buttonName{
+      padding-left: 80px;
+    }
