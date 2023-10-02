@@ -55,6 +55,8 @@ function displayWeather(newWeather) {
   ) {
     para5Element.textContent =
       "Today's forecast: Mainly clear, partly cloudy, and overcast";
+  } else if (newWeather.daily["weathercode"][0] == 63 || newWeather.daily["weathercode"][0] == 61 || newWeather.daily["weathercode"][0] == 65){
+    para5Element.textContent = "Rain: Slight, moderate and heavy intensity"
   }
 }
 
@@ -120,7 +122,7 @@ function displayQuestion(quizQuestion) {
   quiz3Element.innerHTML = `Question: ${quizQuestion.results[0].question}`;
   const quiz4Element = document.getElementById("quiz4");
   quiz4Element.textContent = `Answer: ${quizQuestion.results[0].correct_answer}`;
-  para4Element.setAttribute("style", "colour:palevioletred");
+  quiz4Element.setAttribute("style", "opacity:0%")
 }
 
 //getAndDisplayQuestion()
@@ -129,10 +131,11 @@ function displayQuestion(quizQuestion) {
 const questionButton = document.getElementById("newQButton");
 questionButton.addEventListener("click", getAndDisplayQuestion);
 
-//add event listener to reveal answer when button clicked and if loop to change image
-const ansButton = document.getElementById("answerButton");
+//add event listener to reveal answer when button clicked
+const ansButton = document.getElementById("quizAns");
+const quiz4Element = document.getElementById("quiz4");
+function changeColor(){
+  quiz4Element.setAttribute("style", "opacity:100%")
 
-ansButton.addEventListener("click", function changeColor() {
-  const changedQuiz4Element = document.getElementById("quiz4");
-  changedQuiz4Element.setAttribute("style", "color:white");
-});
+}
+ansButton.addEventListener("click", changeColor);

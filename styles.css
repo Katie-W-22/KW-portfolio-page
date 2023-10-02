@@ -127,6 +127,8 @@ h1 {
     background-color: black;
     background-repeat:initial;
     opacity: 70%;
+    margin-right: 200px;
+    margin-left: 100px;
     
   }
 
@@ -134,7 +136,9 @@ h1 {
     color: white
   }
 
-
+#quiz4{
+  opacity: 0%;
+}
   .quiz{
     color: white;
     text-align: left;
@@ -160,3 +164,20 @@ h1 {
     .buttonName{
       padding-left: 80px;
     }
+
+    .flex-container {
+      display: flex;
+  }
+  
+  .flex-child {
+      flex: 1;
+      border: 2px solid white;
+  }  
+  
+  .flex-child:first-child {
+      margin-right: 20px;
+  } 
+
+  .weatherLogo{
+    border-radius: 50px;
+  }
