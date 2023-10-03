@@ -164,7 +164,7 @@ let currentHour = currentDate.getHours();
 // functon to move the hand using transform
 let currentSecAngle = currentSeconds * 6;
 let currentMinAngle = currentMinutes * 6;
-let currentHourAngle = currentHour * 30.2;
+let currentHourAngle = currentHour * 30.3;
   //currentHour * 7.5 * (Math.floor(currentMinAngle / 90)+1);
 secHand.style.transform = `rotate(${currentSecAngle}deg)`;
 minHand.style.transform = `rotate(${currentMinAngle}deg)`;
