@@ -49,7 +49,8 @@ function displayWeather(newWeather) {
     para5Element.textContent = "Today's forecast: Clear skies!";
   } else if (
     newWeather.daily["weathercode"][0] == 1 ||
-    newWeather.daily["weathercode"][0] == 2
+    newWeather.daily["weathercode"][0] == 2 ||
+    newWeather.daily["weathercode"][0] == 3
   ) {
     para5Element.textContent = "Today's forecast: Mainly clear, partly cloudy, and overcast";
     } else if (newWeather.daily["weathercode"][0] == 63 || newWeather.daily["weathercode"][0] == 61 || newWeather.daily["weathercode"][0] == 65){
